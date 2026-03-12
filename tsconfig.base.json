@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mtg/shared": ["packages/shared/src/index.ts"],
+      "@mtg/database": ["packages/database/src/client.ts"]
+    }
+  }
+}
