@@ -12,4 +12,5 @@ model Card {
   name     String
   oracleId String?
   price    Float?
+  foil     Boolean
 }

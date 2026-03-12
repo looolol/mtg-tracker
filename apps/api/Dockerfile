@@ -8,6 +8,7 @@ COPY apps ./apps
 COPY packages ./packages
 RUN npm install -g pnpm@latest && pnpm install --frozen-lockfile
 
+RUN pnpm --filter @mtg/database prisma:generate
 RUN pnpm --filter api run build
 
 # Stage 2: production
@@ -27,4 +28,4 @@ COPY --from=build /app/apps/api/dist/. ./dist
 
 ENV NODE_ENV=production
 
-CMD ["node", "dist/main.js"]
+CMD pnpm --filter @mtg/database prisma:migrate:deploy && node dist/main.js

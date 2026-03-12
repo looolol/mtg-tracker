@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "main": "src/client.ts",
+  "scripts": {
+    "prisma:generate": "prisma generate",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy"
+  },
   "dependencies": {
     "@prisma/client": "^7.5.0",
     "prisma": "^7.5.0"
